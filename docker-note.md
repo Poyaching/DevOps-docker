@@ -26,7 +26,7 @@ Docker 是一種容器化技術
 
 ### 跨平台部屬
 擁有了部屬包，可以將部屬包放置在雲端平台中（docker hub），在不同的作業系統中，只要安裝docker，就可以直接在docker運行，排除作業系統的影響。
-![image alt](https://github.com/Poyaching/DevOps-docker/blob/main/image/02.jpg)
+![image alt](https://github.com/Poyaching/DevOps-docker/blob/main/image/02.png)
 
 ### 建立乾淨的測試環境
 除了一般程式碼外，也可以將`測試資料`+`資料庫`+`運作指令`打包成部屬包，測試時，只要將程式部屬包及資料庫部屬包同時運行，就可以得到新的環境，即使測試後資料弄髒了，只要重新佈署，又是一個新的測試環境。
@@ -37,14 +37,14 @@ Docker 是一種容器化技術
 ### Windows、macOS
 如果不是 Linux 系統，以前的做法是在作業系統上，再裝一個虛擬機，在虛擬機上安裝 Linux ，便可以像是 Linux 使用 docker。
 又或者還有另一個做法，另一個也是相似的方式，利用系統本身的虛擬機，去建立虛擬作業系統。
-![image alt](https://github.com/Poyaching/DevOps-docker/blob/main/image/03.jpg)
+![image alt](https://github.com/Poyaching/DevOps-docker/blob/main/image/03.jpeg)
 **圖片來源:Docker 部署入門完全指南-圖片速學攻略**
 ### 長大的Windows
 近年 MS 努力走向 Open Source ，例如 redis，做一個新的 Container 來打應用程式。但在 docker 是使用合作模式，Docker 在建立一個 Windows API 。
 
 ## Docker 基礎架構介紹
 
-![image alt](https://github.com/Poyaching/DevOps-docker/blob/main/image/04.jpg)
+![image alt](https://github.com/Poyaching/DevOps-docker/blob/main/image/04.png)
 
 ### Linux指令
 `ls` 列出所有
@@ -256,12 +256,12 @@ docker run 創建 Docker 容器時，可以用 –net 選項指定容器的網�
     docker network inspect networkName 
     ```
 如果我們有將 Containers 設定成該模式，可以在 "Containers" 內中看到看到  Containers ID
-![](https://github.com/Poyaching/DevOps-docker/blob/main/image/05.jpg)
+![](https://github.com/Poyaching/DevOps-docker/blob/main/image/05.png)
 
 
 
 
-![Docker 部署入門完全指南-圖片速學攻略](https://github.com/Poyaching/DevOps-docker/blob/main/image/06.jpg)
+![Docker 部署入門完全指南-圖片速學攻略](https://github.com/Poyaching/DevOps-docker/blob/main/image/06.png)
 **圖片來源:Docker 部署入門完全指南-圖片速學攻略**
 ### host 模式
 使用 –net=host 指定。
@@ -284,7 +284,7 @@ container 的網路設定和實體主機使用相同的網路設定，所以 con
     ``` cmd
     docker network create --driver 網路模式 bridgeName
     ```
-    ![](https://github.com/Poyaching/DevOps-docker/blob/main/image/08.jpg)
+    ![](https://github.com/Poyaching/DevOps-docker/blob/main/image/08.png)
     ```
     "IPAM": {
         "Driver": "default",
@@ -303,7 +303,7 @@ container 的網路設定和實體主機使用相同的網路設定，所以 con
 
 
 ## Docker Volume
-![](https://github.com/Poyaching/DevOps-docker/blob/main/image/09.jpg)
+![](https://github.com/Poyaching/DevOps-docker/blob/main/image/09.png)
 **圖片來源:Docker 部署入門完全指南-圖片速學攻略**
 1. 資料想永久儲存
 預設執行 Docker Container 的時侯，檔案系統會分為 Image 層、Init 層以及可讀可寫層這三個部份。
@@ -427,7 +427,7 @@ volume:
     ```
 
 ## Docker swarm 規模化部屬
-![](https://github.com/Poyaching/DevOps-docker/blob/main/image/10.jpg)
+![](https://github.com/Poyaching/DevOps-docker/blob/main/image/10.png)
 **圖片來源:Docker 部署入門完全指南-圖片速學攻略**
 Docker swarm 可以讓我們進行規模化的`自動化部屬`，讓網站可以應付高流量的需求。
 
