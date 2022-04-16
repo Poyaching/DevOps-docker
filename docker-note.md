@@ -1,15 +1,12 @@
 # Docker
 
 ###### tags: `DevOps`、`Docker`
-以下所有筆記及參考資料來源：
-[Docker 部署入門完全指南-圖片速學攻略](https://hahow.in/courses/5df27f1fa5ee510022a08500/main?item=5e7777849c4b140023a6fd16)
-[Docker容器技术从入门到精通](https://www.udemy.com/course/docker-china/)
-[跟著 Docker 隊長，修練 22 天就精通](https://www.tenlong.com.tw/products/9789863126799?msclkid=64f22c30ac5711ec82e193279c6c437a)
+
 
 ## 什麼是Docker？
 Docker 是一種容器化技術
 ### 部屬演進
-![image alt](https://ithelp.ithome.com.tw/upload/images/20200611/20100951F6mJ7CVug3.jpg)
+![image alt](https://github.com/Poyaching/DevOps-docker/blob/main/image/01.jpg)
 **圖片來源:Docker 部署入門完全指南-圖片速學攻略**
 
 1. 應用程式皆放在同一台硬體上
@@ -29,7 +26,7 @@ Docker 是一種容器化技術
 
 ### 跨平台部屬
 擁有了部屬包，可以將部屬包放置在雲端平台中（docker hub），在不同的作業系統中，只要安裝docker，就可以直接在docker運行，排除作業系統的影響。
-![image alt](https://www.itzgeek.com/wp-content/uploads/2016/07/Building-Docker-Images.png)
+![image alt](https://github.com/Poyaching/DevOps-docker/blob/main/image/02.jpg)
 
 ### 建立乾淨的測試環境
 除了一般程式碼外，也可以將`測試資料`+`資料庫`+`運作指令`打包成部屬包，測試時，只要將程式部屬包及資料庫部屬包同時運行，就可以得到新的環境，即使測試後資料弄髒了，只要重新佈署，又是一個新的測試環境。
@@ -40,14 +37,14 @@ Docker 是一種容器化技術
 ### Windows、macOS
 如果不是 Linux 系統，以前的做法是在作業系統上，再裝一個虛擬機，在虛擬機上安裝 Linux ，便可以像是 Linux 使用 docker。
 又或者還有另一個做法，另一個也是相似的方式，利用系統本身的虛擬機，去建立虛擬作業系統。
-![image alt](https://1024bbs.s3.dualstack.us-east-2.amazonaws.com/original/2X/5/590fed9f0bfc46a83b91d4acc51436d7e7de13c2.jpeg)
+![image alt](https://github.com/Poyaching/DevOps-docker/blob/main/image/03.jpg)
 **圖片來源:Docker 部署入門完全指南-圖片速學攻略**
 ### 長大的Windows
 近年 MS 努力走向 Open Source ，例如 redis，做一個新的 Container 來打應用程式。但在 docker 是使用合作模式，Docker 在建立一個 Windows API 。
 
 ## Docker 基礎架構介紹
 
-![image alt](https://miro.medium.com/max/1400/0*CP98BIIBgMG2K3u5.png)
+![image alt](https://github.com/Poyaching/DevOps-docker/blob/main/image/04.jpg)
 
 ### Linux指令
 `ls` 列出所有
@@ -259,12 +256,12 @@ docker run 創建 Docker 容器時，可以用 –net 選項指定容器的網�
     docker network inspect networkName 
     ```
 如果我們有將 Containers 設定成該模式，可以在 "Containers" 內中看到看到  Containers ID
-![](https://i.imgur.com/OAYIpU4.png)
+![](https://github.com/Poyaching/DevOps-docker/blob/main/image/05.jpg)
 
 
 
 
-![Docker 部署入門完全指南-圖片速學攻略](https://i.imgur.com/x6spq8n.png)
+![Docker 部署入門完全指南-圖片速學攻略](https://github.com/Poyaching/DevOps-docker/blob/main/image/06.jpg)
 **圖片來源:Docker 部署入門完全指南-圖片速學攻略**
 ### host 模式
 使用 –net=host 指定。
@@ -276,7 +273,7 @@ container 的網路設定和實體主機使用相同的網路設定，所以 con
 
 ### bridge 模式（預設）
 
-![https://godleon.github.io/blog/Docker/docker-network-bridge/](https://godleon.github.io/blog/images/docker/bridge_network.jpg)
+![https://godleon.github.io/blog/Docker/docker-network-bridge/](https://github.com/Poyaching/DevOps-docker/blob/main/image/07.jpg)
 
 
 使用 –net=bridge 指定。
@@ -287,7 +284,7 @@ container 的網路設定和實體主機使用相同的網路設定，所以 con
     ``` cmd
     docker network create --driver 網路模式 bridgeName
     ```
-    ![](https://i.imgur.com/Oy4LqHv.png)
+    ![](https://github.com/Poyaching/DevOps-docker/blob/main/image/08.jpg)
     ```
     "IPAM": {
         "Driver": "default",
@@ -306,7 +303,7 @@ container 的網路設定和實體主機使用相同的網路設定，所以 con
 
 
 ## Docker Volume
-![](https://i.imgur.com/j27DZWx.png)
+![](https://github.com/Poyaching/DevOps-docker/blob/main/image/09.jpg)
 **圖片來源:Docker 部署入門完全指南-圖片速學攻略**
 1. 資料想永久儲存
 預設執行 Docker Container 的時侯，檔案系統會分為 Image 層、Init 層以及可讀可寫層這三個部份。
@@ -430,7 +427,7 @@ volume:
     ```
 
 ## Docker swarm 規模化部屬
-![](https://i.imgur.com/kz5X9nG.png)
+![](https://github.com/Poyaching/DevOps-docker/blob/main/image/10.jpg)
 **圖片來源:Docker 部署入門完全指南-圖片速學攻略**
 Docker swarm 可以讓我們進行規模化的`自動化部屬`，讓網站可以應付高流量的需求。
 
